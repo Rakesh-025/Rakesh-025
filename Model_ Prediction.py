@@ -14,13 +14,13 @@ dataset['Marketing_cost'].fillna(dataset['Marketing_cost'].mean(), inplace=True)
 
 dataset['Profit_Margin'].fillna(dataset['Profit_Margin'].mean(), inplace=True)
 
-dataset['Level_of_Course'].fillna(dataset['Level_of_Course'].mode(), inplace=True)
+dataset['Debentures'].fillna(dataset['Debentures'].mode(), inplace=True)
 
 
 dataset['Duration_of_coaching_in_Hours'].fillna(dataset['Duration_of_coaching_in_Hours'].median(), inplace=True)
 
 
-df= dataset[['Maintenance_cost','Marketing_cost','Profit_Margin','Level_of_Course','Duration_of_coaching_in_Hours']]
+df= dataset[['Maintenance_cost','Marketing_cost','Profit_Margin','Debentures','Duration_of_coaching_in_Hours']]
 #  X = dataset.iloc[:, 2:16]
 '''
 #Converting words to integer values
@@ -33,7 +33,7 @@ def convert_to_int(word):
     return word_dict[word]
 
 
-df['Level_of_Course'] = df['Level_of_Course'].apply(lambda df : convert_to_int(df))
+# df['Level_of_Course'] = df['Level_of_Course'].apply(lambda df : convert_to_int(df))
 
 y = dataset.iloc[:, -1]
 
